@@ -206,7 +206,7 @@ xgb.iter.eval <- function(booster, watchlist, iter, feval = NULL, prediction = F
     msg <- ""
   }
   if (prediction){
-    preds <- predict(booster,watchlist[[2]])
+    preds <- predict(booster,watchlist[[2]],ntreelimit=iter+1)
     return(list(msg,preds))
   }
   return(msg)
